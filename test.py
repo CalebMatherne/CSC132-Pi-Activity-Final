@@ -1,13 +1,13 @@
-# just testing to see if everyone can pull and push updates
-# type some stuff in this file and push it to make sure it's working
-
-# PUSH (update the online repo with your changes)
+### HOW TO PUSH ###
 # cd into the cloned repo with git bash
 # git add test.py 
 # git commit -m "commit description"
 # git push
+# (may need to specify the repo name : git pull CSC132-Pi-Activity-Final)
 
-# PULL (update your local files)
+### HOW TO PULL#
 # git pull
 
-hi - Stephan Johnson
+# (may need to specify the repo name (CSC132-Pi-Activity-Final) or specify path (master))
+# git pull CSC132-Pi-Activity-Final master
+
