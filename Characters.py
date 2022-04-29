@@ -1,3 +1,5 @@
+### NO LONGER USED ###
+
 # A file to contain all of the character data
 
 ### CAPITAL LETTERS ###
