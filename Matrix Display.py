@@ -23,8 +23,7 @@ pin_OE = 2
 RED = 0
 GREEN = 1
 BLUE = 2
-FRAME_REPEAT = 50                                        #set from animation file?
-DISPLAY_FRAMES = 4                                       #will change with length of animation
+FRAME_REPEAT = 50                                      #set from animation file?
 DISPLAY_COLS = 32
 DISPLAY_ROWS = 16
 
@@ -48,16 +47,22 @@ RPi.GPIO.setup(pin_Clock, RPi.GPIO.OUT, initial=0)
 RPi.GPIO.setup(pin_Latch, RPi.GPIO.OUT, initial=0)
 RPi.GPIO.setup(pin_OE, RPi.GPIO.OUT, initial=1)
 
+# get picture choice
+File = "Pictures/Pac-Man Eating"
+path = "/home/pi/Matrix Project/" + File
+print(sorted(os.listdir(path)))
+DISPLAY_FRAMES = len(os.listdir(path))
+
+
+
+
+
 # Load animation image files.                            #change to look for images in right folder
 FrameImage = []
-FrameImage.append(pygame.image.load("LaTechLogo1.png"))
-FrameImage.append(pygame.image.load("LaTechLogo2.png"))
-FrameImage.append(pygame.image.load("LaTechLogo3.png"))
-FrameImage.append(pygame.image.load("LaTechLogo4.png"))
-FrameImage.append(pygame.image.load("LaTechLogo5.png"))
+for pict in sorted(os.listdir(path)):
+   FrameImage.append(pygame.image.load(f"{File}/{pict}"))
 
-for pict in os.listdir("."):
-   print(pict)
+
 
 # Load a display frames from images.                     #attempt to include intermediate colors
 DisplayImage = []
@@ -74,16 +79,14 @@ for Frame in range(DISPLAY_FRAMES):
 
 # Loop forever.
 Frame = 0
-FrameDirection = 1
 FrameRepeat = FRAME_REPEAT
 while True:
-   # Animate display frames.
    FrameRepeat -= 1
    if FrameRepeat < 1:
       FrameRepeat = FRAME_REPEAT
-      Frame += FrameDirection
-      if Frame < 1 or Frame >= DISPLAY_FRAMES - 1:
-         FrameDirection *= -1
+      Frame += 1
+      if Frame >= DISPLAY_FRAMES:
+         Frame = 0
 
    # Update LED Matrix.
    for Row in range(int(DISPLAY_ROWS / 2)):
@@ -91,8 +94,6 @@ while True:
       RPi.GPIO.output(pin_A, Row & 1)
       RPi.GPIO.output(pin_B, Row & 2)
       RPi.GPIO.output(pin_C, Row & 4)
-#      RPi.GPIO.output(HUB75E_D, Row & 8)
-#      RPi.GPIO.output(HUB75E_E, Row & 16)
 
       SelRow = Row + 1
       if SelRow > (DISPLAY_ROWS / 2) - 1:
