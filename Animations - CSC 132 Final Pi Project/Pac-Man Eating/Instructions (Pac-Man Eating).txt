@@ -1,0 +1,4 @@
+(Pac-Man Eating) here are the steps for the animation:
+1. Frame 02
+2. Frame 01
+repeat
