@@ -5,51 +5,54 @@ import RPi.GPIO
 import os, os.path
 
 
-# GPIO pin assignments.
-pin_R1 = 17
-pin_G1 = 18
-pin_B1 = 22
-pin_R2 = 23
-pin_G2 = 24
-pin_B2 = 25
-pin_A = 27
-pin_B = 6
-pin_C = 9
-pin_Clock = 3 #SCL
-pin_Latch = 4
-pin_OE = 2
+def PinSetup():
+   # GPIO pin assignments.
+   pin_R1 = 17
+   pin_G1 = 18
+   pin_B1 = 22
+   pin_R2 = 23
+   pin_G2 = 24
+   pin_B2 = 25
+   pin_A = 27
+   pin_B = 6
+   pin_C = 9
+   pin_Clock = 3 #SCL
+   pin_Latch = 4
+   pin_OE = 2
 
-# Display properties.
-RED = 0
-GREEN = 1
-BLUE = 2
-FRAME_REPEAT = 50                                      #set from animation file?
-DISPLAY_COLS = 32
-DISPLAY_ROWS = 16
+   # Display properties.
+   RED = 0
+   GREEN = 1
+   BLUE = 2
+   FRAME_REPEAT = 50                                      #set from animation file?
+   DISPLAY_COLS = 32
+   DISPLAY_ROWS = 16
 
 
-# PyGame used to read image files from storage.
-pygame.init()
+   # PyGame used to read image files from storage.
+   pygame.init()
 
-# Configure GPIO pins.
-RPi.GPIO.setwarnings(False)
-RPi.GPIO.setmode(RPi.GPIO.BCM)
-RPi.GPIO.setup(pin_R1, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_G1, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_B1, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_R2, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_G2, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_B2, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_A, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_B, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_C, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_Clock, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_Latch, RPi.GPIO.OUT, initial=0)
-RPi.GPIO.setup(pin_OE, RPi.GPIO.OUT, initial=1)
+   # Configure GPIO pins.
+   RPi.GPIO.setwarnings(False)
+   RPi.GPIO.setmode(RPi.GPIO.BCM)
+   RPi.GPIO.setup(pin_R1, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_G1, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_B1, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_R2, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_G2, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_B2, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_A, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_B, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_C, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_Clock, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_Latch, RPi.GPIO.OUT, initial=0)
+   RPi.GPIO.setup(pin_OE, RPi.GPIO.OUT, initial=1)
 
-# get picture choice
-File = "Pictures/Pac-Man Eating"
-path = "/home/pi/Matrix Project/" + File
+
+
+# Get Picture Data
+File = "Pac-Man Eating"                                  #change from button
+path = "/home/pi/Matrix Project/Pictures/" + File
 print(sorted(os.listdir(path)))
 DISPLAY_FRAMES = len(os.listdir(path))
 
