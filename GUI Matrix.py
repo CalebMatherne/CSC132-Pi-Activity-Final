@@ -123,7 +123,13 @@ class PageOne(tk.Frame):
         b1.grid(row=0, column=0)
 
         b2 = tk.Button(self, text="Microsoft Logo", font=('Helvetica bold',20), command=lambda: ButtonPress("Microsoft Image",200))
-        b2.grid(row=2, column=2, sticky='S')
+        b2.grid(row=2, column=1, sticky='S')
+
+        b3 = tk.Button(self, text="COES Logo", font=('Helvetica bold',20), command=lambda: ButtonPress("COES Image",200))
+        b3.grid(row=2, column=2, sticky='S')
+
+        b4 = tk.Button(self, text="Hello Kitty", font=('Helvetica bold',20), command=lambda: ButtonPress("HelloKitty",200))
+        b4.grid(row=2, column=3, sticky='S')
 
         # Adds space between Buttons and Headline
         bSpacer4 = tk.Label(self, text=" ", font=('Helvetica bold',20))
@@ -150,17 +156,29 @@ class PageTwo(tk.Frame):
         b2 = tk.Button(self, text="Circles", font=('Helvetica bold',20),command=lambda: ButtonPress("Circles",10)) # Will show Circles
         b2.grid(row=1, column=2, sticky='S')
 
-        b3 = tk.Button(self, text="LaTech Logo", font=('Helvetica bold',20),command=lambda: ButtonPress("LaTechLogo",200)) # Will show Latech Logo
-        b3.grid(row=1, column=3, sticky='S')
+        b3 = tk.Button(self, text="LaTech Logo", font=('Helvetica bold',20),command=lambda: ButtonPress("LaTechLogo",140)) # Will show Latech Logo
+        b3.grid(row=1, column=1, sticky='S')
 
-        b4 = tk.Button(self, text="Mario", font=('Helvetica bold',20),command=lambda: ButtonPress("Mario",50)) # Will show Mario
-        b4.grid(row=1, column=1, sticky='S')
+        b4 = tk.Button(self, text="Mario", font=('Helvetica bold',20),command=lambda: ButtonPress("Mario",80)) # Will show Mario
+        b4.grid(row=3, column=1, sticky='S')
 
-        b5 = tk.Button(self, text="Pac-Man", font=('Helvetica bold',20),command=lambda: ButtonPress("Pac-Man",20)) # Will show Pac-Man
+        b5 = tk.Button(self, text="Pac-Man", font=('Helvetica bold',20),command=lambda: ButtonPress("Pac-Man",30)) # Will show Pac-Man
         b5.grid(row=3, column=2, sticky='S')
 
         b6 = tk.Button(self, text="Rainbow Ripple", font=('Helvetica bold',20),command=lambda: ButtonPress("RainbowRipple",10)) # Will show RainbowRipple
-        b6.grid(row=3, column=3, sticky='S')
+        b6.grid(row=1, column=3, sticky='S')
+
+        b7 = tk.Button(self, text="Hi Judges", font=('Helvetica bold',20),command=lambda: ButtonPress("Hi Judges",10)) # Will show Hi Judges
+        b7.grid(row=3, column=3, sticky='S')
+
+        b8 = tk.Button(self, text="Hi Judges (F)", font=('Helvetica bold',20),command=lambda: ButtonPress("Hi Judges",0)) # Will show Hi Judges
+        b8.grid(row=5, column=3, sticky='S')
+
+        b9 = tk.Button(self, text="EKG", font=('Helvetica bold',20),command=lambda: ButtonPress("EKG",7)) # Will show EKG
+        b9.grid(row=5, column=1, sticky='S')
+
+        b10 = tk.Button(self, text="Clock", font=('Helvetica bold',20),command=lambda: ButtonPress("Clock",230)) # Will show Clock
+        b10.grid(row=5, column=2, sticky='S')
 
         # Adds a headline
         bSpacer2 = tk.Label(self, text="=======", font=('Helvetica bold',20))
@@ -172,6 +190,8 @@ class PageTwo(tk.Frame):
         # Adds a space between buttons and Headline
         bSpacer1 = tk.Label(self, text="     ", font=('Helvetica bold',20))
         bSpacer1.grid(row=2, column=2)
+        bSpacer2 = tk.Label(self, text="     ", font=('Helvetica bold',20))
+        bSpacer2.grid(row=4, column=2)
 
 def ButtonPress(Name, Speed):
     global File
