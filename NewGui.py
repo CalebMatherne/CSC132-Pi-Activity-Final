@@ -35,7 +35,7 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, master)
         
         ## Directory ##
-        l1= tk.Label(self, text="Choose A Group", font=('Helvetica bold',35))
+        l1= tk.Label(self, text="Choose A Group", font=('Helvetica bold',20))
         l1.grid(row=1, column=2)
 
         # Moves to Pictures
@@ -60,7 +60,7 @@ class PageOne(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
 
-        l1 = tk.Label(self, text="Pictures", font=('Helvetica bold',40))
+        l1 = tk.Label(self, text="===Pictures===", font=('Helvetica bold',20))
         l1.grid(row=0, column=2)
 
         # Buttons
@@ -75,17 +75,17 @@ class PageOne(tk.Frame):
         bSpacer4.grid(row=1, column= 0)
 
         # Adds a headline
-        bSpacer2 = tk.Label(self, text="===============", font=('Helvetica bold',20))
+        bSpacer2 = tk.Label(self, text="======", font=('Helvetica bold',20))
         bSpacer2.grid(row=0, column= 1)
 
-        bSpacer3 = tk.Label(self, text="===================", font=('Helvetica bold',20))
+        bSpacer3 = tk.Label(self, text="==========", font=('Helvetica bold',20))
         bSpacer3.grid(row=0, column= 3)
 
 ### ANIMATIONS PAGE ###
 class PageTwo(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
-        l1 = tk.Label(self, text="Animations", font=('Helvetica bold',40)) # Page Topic
+        l1 = tk.Label(self, text="Animations", font=('Helvetica bold',20)) # Page Topic
         l1.grid(row=0, column=2, sticky='N', pady=10)
 
         # Buttons for Animation page
@@ -108,10 +108,10 @@ class PageTwo(tk.Frame):
         b6.grid(row=3, column=3, sticky='S')
 
         # Adds a headline
-        bSpacer2 = tk.Label(self, text="=============", font=('Helvetica bold',20))
+        bSpacer2 = tk.Label(self, text="=======", font=('Helvetica bold',20))
         bSpacer2.grid(row=0, column= 1)
 
-        bSpacer3 = tk.Label(self, text="=================", font=('Helvetica bold',20))
+        bSpacer3 = tk.Label(self, text="=============", font=('Helvetica bold',20))
         bSpacer3.grid(row=0, column= 3)
 
         # Adds a space between buttons and Headline
@@ -121,5 +121,5 @@ class PageTwo(tk.Frame):
 if __name__ == "__main__":
     app = SampleApp()
     app.title("Virtual Matrix")
-    app.geometry('900x420')
+    app.geometry('600x400')
     app.mainloop()
